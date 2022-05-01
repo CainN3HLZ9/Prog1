@@ -3,8 +3,8 @@
 #include <iomanip>
 #include <complex>
 #include <numeric>
-#include "/Matrix.h"
-#include "/MatrixIO.h"
+#include "./Matrix.h"
+#include "./MatrixIO.h"
 
 using Numeric_lib::Matrix;
 
