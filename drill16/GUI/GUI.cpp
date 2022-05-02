@@ -6,13 +6,13 @@ namespace Graph_lib
 	void Button::attach(Window& win)
 	{
 		pw = new Fl_Button(loc.x, loc.y, width, height, label.c_str());
-		pw->callback(reinterpret_cast<Fl_Callback*>(do_it), &win); // pass the window
+		pw->callback(reinterpret_cast<Fl_Callback*>(do_it), &win); 
 		own = &win;
 	}
 	int In_box::get_int()
 	{
 		Fl_Input& pi = reference_to<Fl_Input>(pw);
-		//	return atoi(pi.value());
+		
 		const char* p = pi.value();
 		if (!isdigit(p[0])) return -999999;
 		return atoi(p);
@@ -64,7 +64,7 @@ namespace Graph_lib
 	}
 	int Menu::attach(Button* p)
 	{
-		//	owned.push_back(p);
+		
 		return attach(*p);
 	}
 	Lines_window::Lines_window(Point xy, int w, int h, const string& title)
@@ -122,7 +122,7 @@ namespace Graph_lib
 		double y = m_nextY.get_int();
 		m_lines.add(Point{ x,y });
 
-		//update current position readout
+		
 		ostringstream ss;
 		ss << '(' << x << ',' << y << ')';
 		m_xyOut.put(ss.str());
@@ -131,6 +131,6 @@ namespace Graph_lib
 	}
 	void Lines_window::quit()
 	{
-		hide();		// fltk idiom to delete window
+		hide();		
 	}
 }
